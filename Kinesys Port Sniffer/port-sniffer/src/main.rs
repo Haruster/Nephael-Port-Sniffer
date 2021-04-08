@@ -1,6 +1,14 @@
 //Kinesys Port Sniffer.rs
 
-use std::env
+use std::env;
+use std::net::IpAddr;
+
+struct Argumants {
+
+    flag: String,
+    
+
+}
 
 fn main() {
 
