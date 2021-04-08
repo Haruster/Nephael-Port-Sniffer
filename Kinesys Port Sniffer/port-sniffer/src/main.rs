@@ -3,5 +3,16 @@
 use std::env
 
 fn main() {
-    println!("Hello, world!");
+
+    let mut args: Vec<String> = env::args().collect();
+
+    fot x in &args {
+
+        println!("{}", i);
+
+    }
+
+    println!("{:?}", args);
+
+
 }
