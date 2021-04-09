@@ -60,7 +60,11 @@ impl Argumants {
 fn main() {
 
     let mut args: Vec<String> = env::args().collect();
-
+    let mut program = args[0].clone();
+    let arguments = Argumants::new(&args).unwrap_or_else();
+        |err| {
+            
+        }
     
 
 
