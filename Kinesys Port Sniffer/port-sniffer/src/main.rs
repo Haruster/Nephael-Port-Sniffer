@@ -35,6 +35,10 @@ impl Argumants {
                 return Err("help");
             } else if flag.contains("-h") || flag.contains("-help") {
                 return Err("Too many arguments");
+            } else if flag.contains("-j") {
+                let ipaddr = match IpAddr::from_str(&args[3]) {
+                    
+                }
             }
         }
     }
