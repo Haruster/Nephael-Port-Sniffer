@@ -61,13 +61,7 @@ fn main() {
 
     let mut args: Vec<String> = env::args().collect();
 
-    fot x in &args {
-
-        println!("{}", x);
-
-    }
-
-    println!("{:?}", args);
+    
 
 
 }
