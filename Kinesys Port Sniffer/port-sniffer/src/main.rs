@@ -38,13 +38,18 @@ impl Argumants {
             } else if flag.contains("-j") {
                 let ipaddr = match IpAddr::from_str(&args[3]) {
                     Ok(s) => s,
-                    Err(_) => return Err("not a vaild IPADDR; must be IPv4 or IPv6");
+                    Err(_) => return Err("not a vaild IPADDR; must be IPv4 or IPv6")
                 };
 
                 let threads = match args[2].parse::<u16>() {
-                    
-                }
-        
+                    Ok(s) => s,
+                    Err(_) => return Err("failed to parse thread number")
+                };
+                
+                return Ok(Argumants{threads, flag, ipaddr})
+
+            } else {
+                return Err("invailed synrax");
             }
         }
     }
