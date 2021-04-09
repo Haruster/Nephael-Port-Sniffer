@@ -37,7 +37,8 @@ impl Argumants {
                 return Err("Too many arguments");
             } else if flag.contains("-j") {
                 let ipaddr = match IpAddr::from_str(&args[3]) {
-                    
+                    Ok(s) => s,
+                    Err(_) => return Err("not a vaild IPADDR; must be IPv4 or IPv6");
                 }
             }
         }
