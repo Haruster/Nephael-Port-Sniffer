@@ -80,7 +80,13 @@ fn main() {
     let mut (tx, rx) = channel();
     
     for x in 0..num_threads {
+
         let mut tx = tx.clone();
+    
+
+        thread::spawn(move || {
+            scan(tx, i, arguments.ipaddr, num_threads);
+        })
     }
 
 }
