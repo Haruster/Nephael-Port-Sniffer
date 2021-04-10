@@ -65,7 +65,7 @@ fn main() {
 
     let mut args: Vec<String> = env::args().collect();
     let mut program = args[0].clone();
-    let arguments = Argumants::new(&args).unwrap_or_else();
+    let arguments = Argumants::new(&args).unwrap_or_else(
         |err| {
             if err.contains("help") {
                 process::exit(0);
@@ -74,7 +74,13 @@ fn main() {
                 process::exit(0);
             }
         }
-    
+    );
 
+    let mut num_threads = arguments.threads;
+    let mut (tx, rx) = channel();
+    
+    for x in 0..num_threads {
+        let mut tx = tx.clone();
+    }
 
 }
