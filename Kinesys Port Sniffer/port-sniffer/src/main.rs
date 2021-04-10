@@ -7,6 +7,7 @@ use std::process;
 use std::sync::mpsc::{Sender, channel};
 use std::thread;
 
+const MAX: u16 = 65535;
 
 struct Argumants {
 
