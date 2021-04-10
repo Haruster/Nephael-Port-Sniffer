@@ -1,7 +1,7 @@
 //Kinesys Port Sniffer.rs
 
 use std::env;
-use std::net::IpAddr;
+use std::net::{IpAddr, TcpStream};
 use std::str::FromStr;
 use std::process;
 use std::sync::mpsc::{Sender, channel};
@@ -61,6 +61,11 @@ impl Argumants {
 
 }
 
+fn scan(tx: Sender<u16>, start_port: u16, addr: IpAddr, num_threads: u16) {
+    
+    let mut port: u16 = start_port + 1;
+
+}
 
 fn main() {
 
